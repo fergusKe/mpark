@@ -1,0 +1,343 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+/*	BASIC
+----------------------------------------------*/
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.sectionForm * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.sectionForm img {
+  max-width: 100%;
+}
+
+.sectionForm .row {
+  margin: 0 -15px;
+}
+.sectionForm .row:before, .row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.sectionForm .col-md-6 {
+  width: 50%;
+  float: left;
+  padding: 0 15px;
+}
+#modal_iknow { overflow:visible !important; }
+#modal_iknow h3 {
+	padding:20px 0;
+	line-height: 1.6;
+}
+#modal_iknow ul {
+	padding:20px 0 20px 10px;
+}
+@media screen and (max-width: 720px) {
+  .sectionForm .col-md-6 {
+    width: 100%;
+  }
+}
+
+.sectionForm .d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.sectionForm .pc-view {
+  display: none;
+}
+
+.sectionForm .m-view {
+  display: inline-block;
+}
+
+@media (min-width: 721px) {
+  .sectionForm .pc-view {
+    display: inline-block;
+  }
+
+  .sectionForm .m-view {
+    display: none;
+  }
+}
+/*	表單SECTION
+----------------------------------------------*/
+.sectionForm {
+  font-family: 'Microsoft JhengHei', Arial;
+  line-height: 1.6;
+  display: block;
+  background: url(../images/form_bg.jpg) no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.sectionForm .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+.sectionForm .textMain {
+  color: #AA8D54;
+}
+.sectionForm a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*	FORM
+----------------------------------------------*/
+.sectionForm .form {
+  padding: 0px 25px;
+}
+.sectionForm .form .d-flex {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sectionForm .formGroup {
+  position: relative;
+  margin-bottom: 25px;
+  text-align: left;
+}
+.sectionForm .formGroup + .formGroup {
+  margin-top: 30px;
+}
+
+.sectionForm .formLabel {
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  color: #999;
+  z-index: 1;
+  -webkit-transition: font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+  transition: font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+  -o-transition: transform 150ms ease-out, font-size 150ms ease-out;
+  transition: transform 150ms ease-out, font-size 150ms ease-out;
+  transition: transform 150ms ease-out, font-size 150ms ease-out, -webkit-transform 150ms ease-out;
+}
+
+.sectionForm .focused .formLabel {
+  -webkit-transform: translateY(-120%);
+      -ms-transform: translateY(-120%);
+          transform: translateY(-120%);
+  left: 0;
+  font-size: .75em;
+}
+
+.sectionForm .formInput {
+  position: relative;
+  padding: 12px 10px 8px;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  -webkit-box-shadow: 0 1px 0 0 #e5e5e5;
+          box-shadow: 0 1px 0 0 #e5e5e5;
+  -webkit-transition: -webkit-box-shadow 150ms ease-out;
+  transition: -webkit-box-shadow 150ms ease-out;
+  -o-transition: box-shadow 150ms ease-out;
+  transition: box-shadow 150ms ease-out;
+  transition: box-shadow 150ms ease-out, -webkit-box-shadow 150ms ease-out;
+  font-size: 16px;
+  font-family: 'Microsoft JhengHei', Arial;
+}
+.sectionForm .formInput:focus:invalid {
+  -webkit-box-shadow: inset 0 0 2px 0 #b30000;
+          box-shadow: inset 0 0 2px 0 #b30000;
+}
+
+.sectionForm .formInput.filled {
+  -webkit-box-shadow: 0 2px 0 0 #AA8D54;
+          box-shadow: 0 2px 0 0 #AA8D54;
+}
+
+.sectionForm .formTip {
+  color: #b30000;
+}
+
+.sectionForm .btnSubmit {
+  cursor: pointer;
+  font-family: 'Microsoft JhengHei', Arial;
+  font-size: 18px;
+  letter-spacing: 3px;
+  border: 1px solid #AA8D54;
+  color: #AA8D54;
+  padding: 10px 25px;
+  background: transparent;
+  -webkit-transition: all 0.35s;
+  -o-transition: all 0.35s;
+  transition: all 0.35s;
+}
+.sectionForm .btnSubmit:hover, .btnSubmit:active {
+  border: 1px solid #c4af87;
+  color: #c4af87;
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/*	RADIO & CHECKBOX
+----------------------------------------------*/
+/* Aquí comienzan los estilos a usar*/
+.sectionForm .radiocheck .radio,
+.sectionForm .radiocheck .checkbox {
+  visibility: hidden;
+  position: absolute;
+  left: -9999px;
+}
+
+.sectionForm .radiocheck .radio:checked + label:before,
+.sectionForm .radiocheck .checkbox:checked + label:before {
+  -webkit-animation: checked 600ms 10ms 1;
+  animation: checked 600ms 10ms 1;
+  background: #AA8D54;
+}
+
+.sectionForm .radiocheck label {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  line-height: 1.5;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.sectionForm .radiocheck label:before {
+  content: '';
+  display: inline-block;
+  background: #fff;
+  margin-right: 10px;
+  margin-left: 2px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-transition: all ease 200ms;
+  -o-transition: all ease 200ms;
+  transition: all ease 200ms;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 16px;
+          flex: 0 0 16px;
+}
+
+.sectionForm .radiocheck.check label:before {
+  border-radius: 0;
+}
+
+.sectionForm .radiocheck.en-linea {
+  display: inline-block;
+}
+
+.sectionForm .radiocheck.en-linea label {
+  margin-right: 20px;
+}
+
+@-webkit-keyframes checked {
+  0%,
+	100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8, 0.7);
+    transform: scale(0.8, 0.7);
+  }
+}
+@keyframes checked {
+  0%,
+	100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  10% {
+    -webkit-transform: scale(0.8, 0.7);
+    transform: scale(0.8, 0.7);
+  }
+}
+/*	MODAL
+----------------------------------------------*/
+.modal .content {
+  font-family: 'Microsoft JhengHei', Arial;
+  line-height: 1.6;
+}
+.modal .content li {
+  list-style-type: decimal;
+  padding-bottom: 4px;
+}
+.modal .btnModalClose {
+  display: block;
+  text-align: center;
+  color: #999;
+  text-decoration: none;
+  border-top: 1px solid #ddd;
+  padding: 10px 0 0;
+}
+
+/*	RWD
+--------------------------------------------------------*/
+@media (max-width: 720px) {
+  .sectionForm {
+    font-size: 16px;
+    background: #152D59;
+  }
+  .sectionForm .container {
+    padding: 0;
+  }
+
+  .sectionForm .form {
+    padding: 0px 18.5%;
+    margin-left: -10px;
+  }
+  .sectionForm .form .d-flex {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .sectionForm .formLabel {
+    top: 8px;
+  }
+
+  .sectionForm .focused .formLabel {
+    -webkit-transform: translateY(-125%);
+        -ms-transform: translateY(-125%);
+            transform: translateY(-125%);
+  }
+
+  .sectionForm .btnSubmit {
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  .sectionForm .radiocheck label {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .sectionForm .radiocheck.check label:before {
+    position: relative;
+    top: 5px;
+  }
+}
+
+/*# sourceMappingURL=form.css.map */
