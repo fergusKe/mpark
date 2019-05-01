@@ -28,15 +28,28 @@
 #box13 .swiper-container {
 	display: none;
 	position: absolute;
-	top: 0;
+	top: 36px;
 	left: 0;
 }
 
 .popup-slider {
 	display: none;
 	position: relative;
-	padding-bottom: 60%;
-	margin-bottom: 2.5em;
+	padding-bottom: 53%;
+  margin-bottom: 4.5em;
+}
+
+.popup-slider .slider-title {
+	font-family: "Noto Serif TC", "Microsoft JhengHei", "微軟正黑體", "Microsoft YaHei";
+	font-size: 1.75em;
+	padding-left: 5px;
+}
+
+.popup-slider .slider-txt {
+	position: absolute;
+	bottom: 8px;
+  right: 20px;
+	color: #FFF;
 }
 
 .popup-slider-close-btn {
@@ -74,6 +87,7 @@
   background-color: rgba(33,37,48,0.8);
 	border-radius: .1875em;
 	background-image: none;
+	outline: none;
 	opacity: 0.6;
 	transition: .2s ease-out;
 }
@@ -85,4 +99,15 @@
 	font-size: 32px;
 	color: #fff;
 	line-height: unset;
+}
+
+@media screen and (max-width: 720px) {
+	.popup-slider-close-btn {
+		background: none;
+		opacity: 1;
+	}
+	.swiper-button-next, .swiper-button-prev {
+		background: none;
+		opacity: 1;
+	}
 }

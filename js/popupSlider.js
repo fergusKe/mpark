@@ -42,20 +42,41 @@ $(function() {
     observeParents:true 
 	});
 
-	$('#box13 .item').click(function(e) {
+	$('#box13 .product-item').click(function(e) {
 		e.preventDefault();
 		var $this = $(this);
 		var idx = $this.index() - 1;
-		console.log('idx = ', idx);
+		var winW = $(window).width();
+		var titleObj = {
+			0: '和風時尚美學',
+			1: '日本精工美學',
+			2: '空間坪效美學'
+		}
 		if (idx < 0) return;
-		$('.image_wall').hide();
-		$('.popup-slider').show();
-		$('.popup-slider .swiper-container').eq(idx).show().siblings('.swiper-container').hide();
+
+		if (winW > 720) {
+			$('.slider-title').text(titleObj[idx]);
+			$('.image_wall').hide();
+			$('.popup-slider .swiper-container').eq(idx).show().siblings('.swiper-container').hide();
+			$('.popup-slider').show();
+		} else {
+			$('.slider-title').text(titleObj[idx]);
+			$('.product-item').hide();
+			$('.popup-slider .swiper-container').eq(idx).show().siblings('.swiper-container').hide();
+			$('.popup-slider').show();
+		}
 	});
 
 	$('.popup-slider-close-btn').click(function() {
-		$('.image_wall').show();
-		$('.popup-slider').hide();
+		var winW = $(window).width();
+
+		if (winW > 720) {
+			$('.image_wall').show();
+			$('.popup-slider').hide();
+		} else {
+			$('.product-item').show();
+			$('.popup-slider').hide();
+		}
 	});
 	
 });
