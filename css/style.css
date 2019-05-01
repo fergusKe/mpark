@@ -202,8 +202,8 @@ a { color:#e82d34; text-decoration:none; -webkit-transition: all 0.3s ease; -moz
     
     /* Footer */
     #Footer .btns { padding-left: 13%; padding-right: 13%; }
-    #Footer .btns .item { flex: 6; }
-    #Footer .btns .item a { font-size: 0.8vw; }
+    #Footer .btns .item { width:33.33%; }
+    #Footer .btns .item a { font-size: 1.5vw; }
 }
 @media screen and (max-width: 720px) {
     .for_pc { display: none; }
@@ -256,7 +256,7 @@ a { color:#e82d34; text-decoration:none; -webkit-transition: all 0.3s ease; -moz
     /* Footer */
     #Footer .btns { padding-left: 10%; padding-right: 10%; }
     #Footer .btns .item { width: 100%; }
-    #Footer .btns .item a { font-size: 3vw; }
+    #Footer .btns .item a { font-size:1em; }
 	
 	/* sideBar */
 	.sideBar {
